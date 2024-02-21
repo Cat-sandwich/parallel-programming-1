@@ -53,10 +53,14 @@ int main()
     srand(time(NULL));
     string filename;
     int size = std::atoi(filename.c_str());
-    cout << "¬ведите им€ файла, из которого прочитать матрицы: ";
+    cout << "¬ведите им€ файла, из которого прочитать матрицы (без .txt): ";
     cin >> filename;
-    vector<vector<int>> v1(size, std::vector<int>(size)), v2(size, std::vector<int>(size)), v3(size, std::vector<int>(size));
     filename += ".txt";
+
+    vector<vector<int>> v1(size, std::vector<int>(size))
+        , v2(size, std::vector<int>(size))
+        , v3(size, std::vector<int>(size));
+   
 
     read_data(v1, filename);
     read_data(v2, filename);
