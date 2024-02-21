@@ -3,11 +3,11 @@ import random
 def create_data_files(filename_1, size):
     random.seed()
     f1 = open(filename_1, "w+")
-    for i in range(size):
-        if (i != size - 1):
-            f1.write(str(random.randint(0, 125)) + "\n")
+    for i in range(size*size):
+        if (i != size*size - 1):
+            f1.write(str(random.randint(0, 10)) + "\n")
         else:
-            f1.write(str(random.randint(0, 125)))
+            f1.write(str(random.randint(0, 10)))
     f1.close()
 
 

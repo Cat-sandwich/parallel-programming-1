@@ -3,14 +3,16 @@
 #include <vector>
 #include <chrono>
 #include <iomanip>
+#include <string>
 using namespace std;
 
 void multiply_matrices(const vector<vector<int>>& A, const vector<vector<int>>& B, vector<vector<int>>& C)
 {
     for (int i = 0; i < C.size(); i++) {
         for (int j = 0; j < C[i].size(); j++) {
+            C[i][j] = 0;
             for (int k = 0; k < C.size(); k++) {
-                C[i][j] += A[i][k] * B[k][j];
+                C[i][j] += B[i][k] * A[k][j];
             }
         }
     }
@@ -20,7 +22,7 @@ void read_data(vector<vector<int>>& A, string filename)
 {
     ifstream data;
     data.open(filename);
-
+    
     if (data.is_open()) {
         for (int i = 0; i < A.size(); i++) {
             for (int j = 0; j < A[i].size(); j++) {
@@ -31,7 +33,7 @@ void read_data(vector<vector<int>>& A, string filename)
     data.close();
 }
 
-void write_result(string filename, vector<vector<int>>& C)
+void write_result_matrix(string filename, vector<vector<int>>& C)
 {
     ofstream data(filename);
 
@@ -39,40 +41,57 @@ void write_result(string filename, vector<vector<int>>& C)
         for (int j = 0; j < C[i].size(); j++) {
             data << C[i][j] << "\n";
         }
-        data << endl;
     }
 
     data.close();
 }
 
-
+void resize_matrix(vector<vector<int>>& A, int size)
+{
+    A.resize(size);
+    for (auto& j : A)
+        j.resize(size);
+}
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
     srand(time(NULL));
-    string filename;
-    int size = std::atoi(filename.c_str());
-    cout << "Введите имя файла, из которого прочитать матрицы (без .txt): ";
-    cin >> filename;
-    filename += ".txt";
 
-    vector<vector<int>> v1(size, std::vector<int>(size))
-        , v2(size, std::vector<int>(size))
-        , v3(size, std::vector<int>(size));
-   
+    int size[5]{10, 50, 100, 500, 1000};
+    vector<vector<int>> A, B, C;
+    string res;
 
-    read_data(v1, filename);
-    read_data(v2, filename);
+    string res_filename, filename1, filename2;
+    string filename[3]{ "E:\\УЧЕБА\\parallel programming\\lab1\\lab_1\\VS\\data_matrix_2\\",
+        "E:\\УЧЕБА\\parallel programming\\lab1\\lab_1\\VS\\data_matrix_1\\",
+        "E:\\УЧЕБА\\parallel programming\\lab1\\lab_1\\result_matrix\\" };
 
-    chrono::steady_clock::time_point begin = chrono::steady_clock::now();
-    multiply_matrices(v1, v2, v3);
-    chrono::steady_clock::time_point end = chrono::steady_clock::now();
+    for(int i = 0; i < 5; i++)
+    {
+        resize_matrix(A, size[i]);
+        resize_matrix(B, size[i]);
+        resize_matrix(C, size[i]);
 
-    string rez_filename = "rez_" + filename;
-    write_result(rez_filename, v3);
+        filename1 = filename[0];
+        filename2 = filename[1];
+        read_data(A, filename1.append(to_string(size[i])).append(".txt"));
+        read_data(B, filename2.append(to_string(size[i])).append(".txt"));
 
-    cout << "Diff(ms) = " << chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() << endl;
+        chrono::steady_clock::time_point begin = chrono::steady_clock::now();
+        multiply_matrices(A, B, C);
+        chrono::steady_clock::time_point end = chrono::steady_clock::now();
+
+        res_filename = filename[2];
+        write_result_matrix(res_filename.append(to_string(size[i])).append(".txt"), C);
+
+        res.append("Для матрицы размером ").append(to_string(size[i])).append("х").append(to_string(size[i]));
+        res.append(" время перемножения = ").append(to_string(chrono::duration_cast<std::chrono::milliseconds>(end - begin).count())).append(" мс\n\n");
+        cout << "Diff(ms) = " << chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() << endl;
+    }
+    ofstream data("rez_mul.txt");
+    data << res;
+    data.close();
 
 	return 0;
 }
