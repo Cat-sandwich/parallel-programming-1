@@ -11,7 +11,7 @@ def read(filename, matrix):
     return matrix
 
 if __name__ == "__main__":
-    list_size = [ 10, 50, 100, 500, 1000]
+    list_size = [ 10, 50, 100, 500, 600, 700, 800, 900, 1000]
     list_folder_name = ["data_matrix_1/", "data_matrix_2/", "e:\УЧЕБА\parallel programming\lab1\lab_1\\result_matrix/"]
     list_res_check = []
 
