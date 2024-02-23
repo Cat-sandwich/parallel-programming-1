@@ -30,7 +30,7 @@ if __name__ == "__main__":
     f1 = open("res_check.txt", "w+")
     for i in range(len(list_res_check)):
         if (i != len(list_res_check) - 1):
-            f1.write(str(list_size[i]) + " " + str(list_res_check[i]) + "\n")
+            f1.write("Для матрицы размером "+ str(list_size[i]) + " x " + str(list_size[i]) +" результат проверки: " + str(list_res_check[i]) + "\n")
         else:
-            f1.write(str(list_size[i]) + " " + str(list_res_check[i]))
+            f1.write("Для матрицы размером "+ str(list_size[i]) + " x " + str(list_size[i]) +" результат проверки: " + str(list_res_check[i]))
     f1.close()

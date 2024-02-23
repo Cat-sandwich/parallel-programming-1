@@ -13,7 +13,7 @@ def create_data_files(filename_1, size):
 
 
 if __name__ == "__main__":
-    list_size = [10, 50, 100, 500, 1000]
+    list_size = [10, 50, 100, 500, 600, 700, 800, 900, 1000]
     list_folder_name = ["data_matrix_1/", "data_matrix_2/"]
     for i in list_folder_name:
         for j in list_size:

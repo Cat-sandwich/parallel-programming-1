@@ -58,7 +58,7 @@ int main()
     setlocale(LC_ALL, "Russian");
     srand(time(NULL));
 
-    int size[5]{10, 50, 100, 500, 1000};
+    int size[9]{ 10, 50, 100, 500, 600, 700, 800, 900, 1000 };
     vector<vector<int>> A, B, C;
     string res;
 
@@ -67,7 +67,7 @@ int main()
         "E:\\свеаю\\parallel programming\\lab1\\lab_1\\VS\\data_matrix_1\\",
         "E:\\свеаю\\parallel programming\\lab1\\lab_1\\result_matrix\\" };
 
-    for(int i = 0; i < 5; i++)
+    for(int i = 0; i < 9; i++)
     {
         resize_matrix(A, size[i]);
         resize_matrix(B, size[i]);
