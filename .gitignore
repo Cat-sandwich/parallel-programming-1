@@ -6,10 +6,11 @@ lab_1/MVS/lab_1.sln
 lab_1/MVS/lab_1.vcxproj
 lab_1/MVS/lab_1.vcxproj.filters
 lab_1/MVS/lab_1.vcxproj.user
-
+lab_1/result_matrix
 
 *.vcxproj
 *.filters
 *.user
-*.txt
+.txt
 *.sln
+/lab_2/result_matrix
