@@ -39,6 +39,7 @@
 ![королев1](https://github.com/Cat-sandwich/parallel-programming-1/assets/113890061/5cdd4ece-e03e-4d99-ba3c-d52863c4b7bf)
 * Перенесла итоговые файлы на свой ПК
 * Посчитала доверительные интервалы и построила график зависимости времени от размера матриц (один график для разного числа потоков)
+  
 ![график](https://github.com/Cat-sandwich/parallel-programming-1/assets/113890061/a132847e-2a92-4dbb-a8fb-690e5dc72d30)
 ![довер1](https://github.com/Cat-sandwich/parallel-programming-1/assets/113890061/d83fd2e8-4337-4a63-9096-ca094dae4931)
 ![довер2](https://github.com/Cat-sandwich/parallel-programming-1/assets/113890061/1b8bbcdb-c177-468f-a716-61de227fa6fa)
