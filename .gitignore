@@ -14,3 +14,15 @@ lab_1/result_matrix
 .txt
 *.sln
 /lab_2/result_matrix
+*.out
+*.log
+*.ilk
+*.recipe
+*.txt
+*.tlog
+*.obj
+*.exe
+lab_3/Source.cpp
+*.zip
+*.pdb
+*.idb
