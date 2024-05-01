@@ -23,7 +23,7 @@
 * `lab_2\VS\confidence_interval.ipynb` содержится расчет доверительных интервалов для 1 и 16 потоков
 * `lab_2\MVS\rez_mul.txt` проверка правильности перемножения
 Результаты зависимости времени от числа потоков представлены на графике:
-![alt text](lab_2\image.png)
+![image](https://github.com/Cat-sandwich/parallel-programming-1/assets/113890061/b4ad1a1f-5fca-4d39-99c0-a1995641bcb1)
 
 ## Лабораторная 3
 ### Описание работы на ПК
@@ -32,12 +32,17 @@
 * Установила необходимые программки (PuTTY и WinSCP)
 * Перенесла на удаленный компьютер свои файлы, а потом с помощью WinSCP скопировала их на суперкомпьютер
 * Скомпилировала программу (дополнительно понадобилось -std=c++11)
-![alt text](lab_3\королев2.png)
+![королев2](https://github.com/Cat-sandwich/parallel-programming-1/assets/113890061/e507c067-02dd-48df-816e-956371eb4bcb)
 * Запустила скомпилированный бинарник через PuTTY (проделала эту работу для разного числа потоков)
-![alt text](lab_3\королев3.png)
+![королев3](https://github.com/Cat-sandwich/parallel-programming-1/assets/113890061/200b98fe-46fb-42f6-bc8a-1b0e0d2933d1)
 * Перенесла итоговые файлы обратно на удаленный рабочий стол
-![alt text](lab_3\королев1.png)
+![королев1](https://github.com/Cat-sandwich/parallel-programming-1/assets/113890061/5cdd4ece-e03e-4d99-ba3c-d52863c4b7bf)
 * Перенесла итоговые файлы на свой ПК
 * Посчитала доверительные интервалы и построила график зависимости времени от размера матриц (один график для разного числа потоков)
-![alt text](lab_3\график.png)
+![график](https://github.com/Cat-sandwich/parallel-programming-1/assets/113890061/a132847e-2a92-4dbb-a8fb-690e5dc72d30)
+![довер1](https://github.com/Cat-sandwich/parallel-programming-1/assets/113890061/d83fd2e8-4337-4a63-9096-ca094dae4931)
+![довер2](https://github.com/Cat-sandwich/parallel-programming-1/assets/113890061/1b8bbcdb-c177-468f-a716-61de227fa6fa)
+
+
+
 
